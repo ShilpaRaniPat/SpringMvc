@@ -15,9 +15,9 @@ public class UserController {
         }
         @RequestMapping("/Credentials")
         public String greeting(@RequestParam("Username") String i ,@RequestParam("Password") String j ,ModelMap map){
-            User user=new User();
-            user.setUser(i);
-                map.addAttribute("greeting", "user is " + user.getUser() + " as needed");
+           User user=new User(i,j);
+            //user.setUsername(i);
+                map.addAttribute("greeting", "user is " + user.getUsername() + " as needed");
                 return "display";
 
         }
